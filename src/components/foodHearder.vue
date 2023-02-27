@@ -39,6 +39,8 @@
         <bannerFood />
         <bannerImage />
         <menuFood />
+        <pizzaFood />
+        <productReview />
     </div>
 </template>
 
@@ -47,13 +49,18 @@ import hearder from './hearder.vue'
 import bannerFood from './home/bannerFood.vue'
 import bannerImage from './home/bannerImage.vue'
 import menuFood from './home/menuFood.vue'
+import pizzaFood from './home/pizza.vue'
+import productReview from './home/product_Reviews.vue';
 export default {
 name: 'foodHeader',
 components:{
     hearder,
     bannerFood,
     bannerImage,
-    menuFood
+    menuFood,
+    pizzaFood,
+    productReview
+
 }
 
 }

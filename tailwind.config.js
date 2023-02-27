@@ -22,7 +22,8 @@ module.exports = {
         item_unlock:'#18314E',
         unlock: '#2092D1',
         history_item: '#3a3b3c73',
-        banner:  '#0000007a'
+        banner:  '#0000007a',
+        pizza: '#F9F5F1'
         
     },
     fontWeight: {
