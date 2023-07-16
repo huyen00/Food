@@ -13,7 +13,7 @@ window.axios = require('axios');
 import stores from './store/store';
 // window.axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 import Vuex from 'vuex'
-
+import * as te from 'tw-elements';
 import VueRouter from 'vue-router';
 library.add(fab, fas, far)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -23,6 +23,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
    modules: { stores },
 });
+Vue.use(te);
+
 
 const router = new VueRouter({mode: 'history', routes});
 

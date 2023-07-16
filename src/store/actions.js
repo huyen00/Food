@@ -1,66 +1,17 @@
 
-import axios from "axios"
+import ApiService from "@/common/apiService";
 export default {
-   pushsinhvien(content,data){
-    console.log('pushsinhvien content',content)
-   
-    content.commit('PushSinhVien', data)
+ getListBook({commit, state} ){
     
-   },
-   editsv(content,data){
-     content.commit('editDataSV', data)
-       console.log('editsv content',content)
-      console.log('editsv data',data)
+     return ApiService.query(`api/books?page=${state.currentPage}&limit=${state.perPage}`).then((response) => {
 
-   },
-   deletesv(content, data){
-      
-      content.commit('deletesinhvien', data)
-
-   },
-   // dùng api 
-   getEntries({commit}){
-      axios.get('https://63e0d0e359bb472a74297298.mockapi.io/api/v1/user')
-      .then(response => {
-         // console.log("user1",response)
-         commit('SET_ENTRIES', response.data);
-      })
-   },
-   addUser({commit},list_user){
-      // console.log("addUser1:", commit)
-
-      // console.log("list_user:", list_user)
-      axios.post('https://63e0d0e359bb472a74297298.mockapi.io/api/v1/user',{
-         name: list_user.name,
-         avatar: list_user.avatar
-      })
-      .then(response => {
-         // console.log("user1",response)
-         commit('ADD_USER', response.data);
-      })
-   },
-   editDataUser({commit},list_user){
-      console.log("addUser1:", commit)
-
-      console.log("list_user:", list_user)
-      axios.put(`https://63e0d0e359bb472a74297298.mockapi.io/api/v1/user/${list_user.id}`,{
-         name: list_user.name,
-         avatar: list_user.avatar
-      })
-      .then(response => {
-         // console.log("user1",response)
-         commit('EDIT_USER', response.data);
-      })
-   },
-   deleteUser({commit},id){
-      console.log("idd:", id)
-
-      console.log("idd:", commit)
-      axios.delete(`https://63e0d0e359bb472a74297298.mockapi.io/api/v1/user/${id}`)
-      .then(response => {
-         // console.log("user1",response)
-         commit('DELETE_USER', response.data);
-      })
-   }
+        if (response.status == 200) {
+            console.log("123",response.data)
+            console.log("123",response.data.data.items)
+            commit("getListBook", response.data.data);
+            
+        }
+     })
+ }
 
 };

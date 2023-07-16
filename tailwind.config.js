@@ -5,6 +5,8 @@ module.exports = {
       './public/**/*.html',
       './src/**/*.vue',
       "./node_modules/flowbite/**/*.js",
+      "./src/**/*.{html,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js"
     ],
  
     darkMode: false, // or 'media' or 'class'
@@ -56,6 +58,7 @@ module.exports = {
     },
     plugins: [
       require('flowbite/plugin'),
-      require('tailwind-scrollbar-hide')
+      require('tailwind-scrollbar-hide'),
+      require("tw-elements/dist/plugin")
     ],
   }

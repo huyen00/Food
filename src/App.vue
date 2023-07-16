@@ -1,31 +1,21 @@
 <template>
   
   <div id="app fixed h-full" style="height:100%">
-    <!-- <header /> -->
-    <!-- <HomeGame /> -->
-    <!-- <headerContact /> -->
-    <!-- <listContact /> -->
-    <foodHeader />
-    <!-- <router-view></router-view>  -->
+   <sidebar />
+    
   </div>
 </template>
 
 <script>
-
-import foodHeader from './components/foodHearder.vue'
-
-
-
-
-
+import sidebar from './components/layout/Sidebar.vue'
 export default {
   name: 'App',
  
   
   components: {
+    sidebar
     
-    
-    foodHeader
+  
   },
   
 }
